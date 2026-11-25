@@ -1,0 +1,190 @@
+{
+  "call_id": "demo-0003",
+  "scenario_id": "en-003-phone-on-keypad",
+  "language": "en",
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Liepa Dental Clinic, this is the automated assistant. How can I help?",
+      "start_ms": 0,
+      "end_ms": 4140
+    },
+    {
+      "role": "caller",
+      "text": "I want a hygiene appointment on Friday.",
+      "start_ms": 4570,
+      "end_ms": 6670
+    },
+    {
+      "role": "agent",
+      "text": "Let me check Friday for hygiene.",
+      "start_ms": 7770,
+      "end_ms": 9470
+    },
+    {
+      "role": "caller",
+      "text": "Eleven is fine.",
+      "start_ms": 9930,
+      "end_ms": 10930
+    },
+    {
+      "role": "agent",
+      "text": "Eleven on Friday it is. Your full name please.",
+      "start_ms": 11935,
+      "end_ms": 14335
+    },
+    {
+      "role": "caller",
+      "text": "Liga Krumina.",
+      "start_ms": 14855,
+      "end_ms": 16155
+    },
+    {
+      "role": "agent",
+      "text": "Thank you. Please type your phone number on the keypad, digits are easier to get right that way than spoken.",
+      "start_ms": 17270,
+      "end_ms": 22470
+    },
+    {
+      "role": "caller",
+      "text": "My number is two six five seven nine eight two for.",
+      "start_ms": 23170,
+      "end_ms": 26570
+    },
+    {
+      "role": "agent",
+      "text": "I have your number from the keypad. Booked, Friday at eleven. Reference LIE-2HJ9WS.",
+      "start_ms": 27965,
+      "end_ms": 32565
+    }
+  ],
+  "events": [
+    {
+      "type": "user_speech_end",
+      "at_ms": 6670,
+      "turn": 1
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 6900,
+      "turn": 1
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 7420,
+      "turn": 1
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 7680,
+      "turn": 1
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 7770,
+      "turn": 1
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 10930,
+      "turn": 2
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 11130,
+      "turn": 2
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 11610,
+      "turn": 2
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 11850,
+      "turn": 2
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 11935,
+      "turn": 2
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 16155,
+      "turn": 3
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 16365,
+      "turn": 3
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 16925,
+      "turn": 3
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 17175,
+      "turn": 3
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 17270,
+      "turn": 3
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 26570,
+      "turn": 4
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 26830,
+      "turn": 4
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 27550,
+      "turn": 4
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 27850,
+      "turn": 4
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 27965,
+      "turn": 4
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "check_availability",
+      "arguments": {
+        "date": "friday",
+        "service": "hygiene"
+      },
+      "at_ms": 11610
+    },
+    {
+      "name": "book_appointment",
+      "arguments": {
+        "name": "Liga Krumina",
+        "phone": "+371 26 579 824",
+        "service": "hygiene",
+        "start": "2026-11-28T11:00:00+02:00"
+      },
+      "at_ms": 27550
+    }
+  ],
+  "metadata": {
+    "provider": "synthetic",
+    "note": "hand written demo fixture"
+  },
+  "reference_transcript": {
+    "3": "My number is two six five seven nine eight two four."
+  }
+}

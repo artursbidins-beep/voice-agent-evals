@@ -1,0 +1,187 @@
+{
+  "call_id": "demo-0005",
+  "scenario_id": "en-005-day-full",
+  "language": "en",
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Liepa Dental Clinic, this is the automated assistant. How can I help?",
+      "start_ms": 0,
+      "end_ms": 4140
+    },
+    {
+      "role": "caller",
+      "text": "Can I get a filling on Friday?",
+      "start_ms": 4560,
+      "end_ms": 6260
+    },
+    {
+      "role": "agent",
+      "text": "Let me look at Friday.",
+      "start_ms": 7305,
+      "end_ms": 8505
+    },
+    {
+      "role": "caller",
+      "text": "Monday works then.",
+      "start_ms": 8975,
+      "end_ms": 10075
+    },
+    {
+      "role": "agent",
+      "text": "Friday is full for fillings. The first free day is Monday, at nine fifteen or at fifteen thirty.",
+      "start_ms": 11290,
+      "end_ms": 16690
+    },
+    {
+      "role": "caller",
+      "text": "Yes, book it.",
+      "start_ms": 17090,
+      "end_ms": 17990
+    },
+    {
+      "role": "agent",
+      "text": "Your full name please, then type your number on the keypad.",
+      "start_ms": 18940,
+      "end_ms": 21840
+    },
+    {
+      "role": "caller",
+      "text": "Janis Kalnins.",
+      "start_ms": 22640,
+      "end_ms": 23840
+    },
+    {
+      "role": "agent",
+      "text": "Booked for Monday at nine fifteen. Reference LIE-8PT3LC.",
+      "start_ms": 25170,
+      "end_ms": 28170
+    }
+  ],
+  "events": [
+    {
+      "type": "user_speech_end",
+      "at_ms": 6260,
+      "turn": 1
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 6470,
+      "turn": 1
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 6970,
+      "turn": 1
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 7220,
+      "turn": 1
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 7305,
+      "turn": 1
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 10075,
+      "turn": 2
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 10305,
+      "turn": 2
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 10915,
+      "turn": 2
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 11195,
+      "turn": 2
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 11290,
+      "turn": 2
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 17990,
+      "turn": 3
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 18180,
+      "turn": 3
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 18630,
+      "turn": 3
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 18860,
+      "turn": 3
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 18940,
+      "turn": 3
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 23840,
+      "turn": 4
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 24090,
+      "turn": 4
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 24770,
+      "turn": 4
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 25060,
+      "turn": 4
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 25170,
+      "turn": 4
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "check_availability",
+      "arguments": {
+        "date": "friday",
+        "service": "filling"
+      },
+      "at_ms": 10915
+    },
+    {
+      "name": "book_appointment",
+      "arguments": {
+        "name": "Janis Kalnins",
+        "phone": "20114488",
+        "service": "filling",
+        "start": "2026-11-30T09:15:00+02:00"
+      },
+      "at_ms": 24770
+    }
+  ],
+  "metadata": {
+    "provider": "synthetic",
+    "note": "hand written demo fixture"
+  }
+}

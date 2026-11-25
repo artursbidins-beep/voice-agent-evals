@@ -1,0 +1,22 @@
+id: en-003-phone-on-keypad
+title: The phone number is taken on the keypad, not by ear
+language: en
+persona: Speaks the number fast and with a local accent, the worst case for a transcriber.
+tags: [booking, keypad, data-quality]
+script:
+  - "I want a hygiene appointment on Friday."
+  - "Eleven is fine."
+  - "Liga Krumina."
+  - "My number is two six five seven nine eight two four."
+expect:
+  tool_calls:
+    - name: check_availability
+      arguments:
+        service: hygiene
+    - name: book_appointment
+      arguments:
+        service: hygiene
+        phone: "26579824"
+  must_say_any:
+    - "keypad"
+    - "type it"

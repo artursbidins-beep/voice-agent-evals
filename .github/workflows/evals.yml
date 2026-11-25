@@ -1,0 +1,60 @@
+name: evals
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # 03:00 UTC, every night. The offline suite is free, so the point of the
+    # nightly run is the live one below.
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  offline:
+    name: unit tests and the recorded suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: install
+        run: pip install -e ".[dev]"
+      - name: unit tests
+        run: pytest
+      - name: recorded suite
+        run: voice-evals run config/liepa-en.yaml
+      - name: keep the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report-offline
+          path: reports/
+
+  live:
+    name: nightly run against the real agent
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: install
+        run: pip install -e .
+      - name: live suite
+        env:
+          VAPI_API_KEY: ${{ secrets.VAPI_API_KEY }}
+        run: |
+          if [ -z "$VAPI_API_KEY" ]; then
+            echo "VAPI_API_KEY is not set, nothing to run against. Not a failure."
+            exit 0
+          fi
+          voice-evals run config/liepa-en.yaml --provider vapi
+      - name: keep the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report-live
+          path: reports/

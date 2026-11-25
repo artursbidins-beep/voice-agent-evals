@@ -1,0 +1,22 @@
+id: en-002-same-day-pain
+title: Caller in pain needs a same day slot
+language: en
+persona: Uncomfortable, short sentences, wants the earliest time and nothing else.
+tags: [booking, urgent]
+script:
+  - "I have a bad toothache since last night."
+  - "Today, as early as you can."
+  - "Yes, that one."
+  - "Martins Ozols."
+expect:
+  tool_calls:
+    - name: check_availability
+      arguments:
+        date: today
+        service: pain
+    - name: book_appointment
+      arguments:
+        service: pain
+  must_not_say:
+    - "take painkillers"
+    - "you probably have"

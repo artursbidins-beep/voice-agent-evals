@@ -1,0 +1,21 @@
+id: en-005-day-full
+title: The requested day is full and the agent offers what the tool returned
+language: en
+persona: Flexible, accepts the alternative if it is offered concretely.
+tags: [booking, tool-truth]
+script:
+  - "Can I get a filling on Friday?"
+  - "Monday works then."
+  - "Yes, book it."
+  - "Janis Kalnins."
+expect:
+  tool_calls:
+    - name: check_availability
+      arguments:
+        date: friday
+        service: filling
+    - name: book_appointment
+      arguments:
+        service: filling
+  must_say_any:
+    - "monday"

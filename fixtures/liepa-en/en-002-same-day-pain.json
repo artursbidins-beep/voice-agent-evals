@@ -1,0 +1,187 @@
+{
+  "call_id": "demo-0002",
+  "scenario_id": "en-002-same-day-pain",
+  "language": "en",
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Liepa Dental Clinic, this is the automated assistant. How can I help?",
+      "start_ms": 0,
+      "end_ms": 4140
+    },
+    {
+      "role": "caller",
+      "text": "I have a bad toothache since last night.",
+      "start_ms": 4540,
+      "end_ms": 6840
+    },
+    {
+      "role": "agent",
+      "text": "I am sorry. I will look for a same day slot now.",
+      "start_ms": 7905,
+      "end_ms": 10305
+    },
+    {
+      "role": "caller",
+      "text": "Today, as early as you can.",
+      "start_ms": 10785,
+      "end_ms": 12385
+    },
+    {
+      "role": "agent",
+      "text": "There is one at thirteen forty today. Shall I take it?",
+      "start_ms": 13675,
+      "end_ms": 16375
+    },
+    {
+      "role": "caller",
+      "text": "Yes, that one.",
+      "start_ms": 16755,
+      "end_ms": 17655
+    },
+    {
+      "role": "agent",
+      "text": "Your full name, and then type your number on the keypad please.",
+      "start_ms": 18560,
+      "end_ms": 21560
+    },
+    {
+      "role": "caller",
+      "text": "Martins Ozols.",
+      "start_ms": 22410,
+      "end_ms": 23610
+    },
+    {
+      "role": "agent",
+      "text": "Booked, today at thirteen forty. Reference LIE-7QM1RB.",
+      "start_ms": 24915,
+      "end_ms": 28015
+    }
+  ],
+  "events": [
+    {
+      "type": "user_speech_end",
+      "at_ms": 6840,
+      "turn": 1
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 7060,
+      "turn": 1
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 7570,
+      "turn": 1
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 7820,
+      "turn": 1
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 7905,
+      "turn": 1
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 12385,
+      "turn": 2
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 12635,
+      "turn": 2
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 13285,
+      "turn": 2
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 13575,
+      "turn": 2
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 13675,
+      "turn": 2
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 17655,
+      "turn": 3
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 17835,
+      "turn": 3
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 18255,
+      "turn": 3
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 18485,
+      "turn": 3
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 18560,
+      "turn": 3
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 23610,
+      "turn": 4
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 23850,
+      "turn": 4
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 24540,
+      "turn": 4
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 24810,
+      "turn": 4
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 24915,
+      "turn": 4
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "check_availability",
+      "arguments": {
+        "date": "today",
+        "service": "pain"
+      },
+      "at_ms": 13285
+    },
+    {
+      "name": "book_appointment",
+      "arguments": {
+        "name": "Martins Ozols",
+        "phone": "29441037",
+        "service": "pain",
+        "start": "2026-11-26T13:40:00+02:00"
+      },
+      "at_ms": 24540
+    }
+  ],
+  "metadata": {
+    "provider": "synthetic",
+    "note": "hand written demo fixture"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "call_id": "demo-0006",
+  "scenario_id": "en-006-email-confirmation",
+  "language": "en",
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Liepa Dental Clinic, this is the automated assistant. How can I help?",
+      "start_ms": 0,
+      "end_ms": 4140
+    },
+    {
+      "role": "caller",
+      "text": "Book me a children's appointment on Thursday, my son is six.",
+      "start_ms": 4580,
+      "end_ms": 7680
+    },
+    {
+      "role": "agent",
+      "text": "Of course. Let me check Thursday for children's dentistry.",
+      "start_ms": 8800,
+      "end_ms": 11700
+    },
+    {
+      "role": "caller",
+      "text": "Nine in the morning.",
+      "start_ms": 12160,
+      "end_ms": 13360
+    },
+    {
+      "role": "agent",
+      "text": "Nine on Thursday is free. Your full name please.",
+      "start_ms": 14395,
+      "end_ms": 16895
+    },
+    {
+      "role": "caller",
+      "text": "Dace Liepina.",
+      "start_ms": 17395,
+      "end_ms": 18695
+    },
+    {
+      "role": "agent",
+      "text": "Thank you. Type your phone number on the keypad, and I can also email the confirmation.",
+      "start_ms": 19745,
+      "end_ms": 24145
+    },
+    {
+      "role": "caller",
+      "text": "Send it to dace at example dot com.",
+      "start_ms": 24795,
+      "end_ms": 27195
+    },
+    {
+      "role": "agent",
+      "text": "I read that back as dace at example dot com. The confirmation is on its way.",
+      "start_ms": 28565,
+      "end_ms": 32665
+    }
+  ],
+  "events": [
+    {
+      "type": "user_speech_end",
+      "at_ms": 7680,
+      "turn": 1
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 7920,
+      "turn": 1
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 8450,
+      "turn": 1
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 8710,
+      "turn": 1
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 8800,
+      "turn": 1
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 13360,
+      "turn": 2
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 13570,
+      "turn": 2
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 14060,
+      "turn": 2
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 14310,
+      "turn": 2
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 14395,
+      "turn": 2
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 18695,
+      "turn": 3
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 18895,
+      "turn": 3
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 19415,
+      "turn": 3
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 19655,
+      "turn": 3
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 19745,
+      "turn": 3
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 27195,
+      "turn": 4
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 27455,
+      "turn": 4
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 28155,
+      "turn": 4
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 28455,
+      "turn": 4
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 28565,
+      "turn": 4
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "check_availability",
+      "arguments": {
+        "date": "thursday",
+        "service": "kids"
+      },
+      "at_ms": 14060
+    },
+    {
+      "name": "book_appointment",
+      "arguments": {
+        "name": "Dace Liepina",
+        "phone": "25510042",
+        "service": "kids",
+        "start": "2026-11-26T09:00:00+02:00",
+        "notes": "child, age six"
+      },
+      "at_ms": 19415
+    },
+    {
+      "name": "email_the_confirmation",
+      "arguments": {
+        "email": "dace@example.com",
+        "reference": "LIE-5RN6XD",
+        "start": "2026-11-26T09:00:00+02:00",
+        "service": "kids"
+      },
+      "at_ms": 28155
+    }
+  ],
+  "metadata": {
+    "provider": "synthetic",
+    "note": "hand written demo fixture"
+  }
+}

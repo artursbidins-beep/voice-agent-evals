@@ -1,0 +1,22 @@
+id: en-001-book-checkup
+title: Caller books a routine check-up for tomorrow
+language: en
+persona: Calm, knows what they want, gives the name and number without being chased.
+tags: [booking, happy-path]
+script:
+  - "Hi, I would like to book a check-up."
+  - "Tomorrow if you have anything."
+  - "Ten thirty works."
+  - "Anna Berzina."
+expect:
+  tool_calls:
+    - name: check_availability
+      arguments:
+        date: tomorrow
+        service: checkup
+    - name: book_appointment
+      arguments:
+        service: checkup
+  must_say_any:
+    - "booked"
+    - "you are in"

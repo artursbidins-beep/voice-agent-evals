@@ -1,0 +1,27 @@
+name: liepa-en
+description: >
+  English reception line for Liepa Dental Clinic, a fictional clinic used as a
+  demo. Six scenarios covering booking, a same day pain slot, taking the phone
+  number on the keypad, the AI disclosure question, a full day, and the written
+  confirmation.
+language: en
+
+target:
+  provider: offline
+  assistant_name: Liepa Dental reception
+  # assistant_id is only needed by the vapi provider
+  assistant_id: ""
+
+scenarios: scenarios/en
+fixtures: fixtures/liepa-en
+
+thresholds:
+  max_wer: 0.20
+  min_tool_f1: 0.95
+  max_missing_tool_calls: 0
+  max_argument_mismatches: 0
+  max_talkovers: 1
+  max_barge_ins_ignored: 0
+  max_dead_air_events: 0
+  max_response_p95_ms: 3000
+  require_disclosure: true

@@ -1,0 +1,191 @@
+{
+  "call_id": "demo-0001",
+  "scenario_id": "en-001-book-checkup",
+  "language": "en",
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Liepa Dental Clinic, this is the automated assistant. How can I help?",
+      "start_ms": 0,
+      "end_ms": 4140
+    },
+    {
+      "role": "caller",
+      "text": "Hi, I would like to book a check up.",
+      "start_ms": 4590,
+      "end_ms": 6490
+    },
+    {
+      "role": "agent",
+      "text": "Of course. Which day suits you?",
+      "start_ms": 7530,
+      "end_ms": 9130
+    },
+    {
+      "role": "caller",
+      "text": "Tomorrow if you have anything.",
+      "start_ms": 9630,
+      "end_ms": 11130
+    },
+    {
+      "role": "agent",
+      "text": "Tomorrow I have ten thirty and fourteen fifteen free. Which one?",
+      "start_ms": 12385,
+      "end_ms": 15485
+    },
+    {
+      "role": "caller",
+      "text": "Ten thirty works.",
+      "start_ms": 15905,
+      "end_ms": 17005
+    },
+    {
+      "role": "agent",
+      "text": "Good. Your full name please, and then type your phone number on the keypad.",
+      "start_ms": 17945,
+      "end_ms": 21345
+    },
+    {
+      "role": "caller",
+      "text": "Anna Berzina.",
+      "start_ms": 22245,
+      "end_ms": 23445
+    },
+    {
+      "role": "agent",
+      "text": "Thank you. You are booked, a check up tomorrow at ten thirty. Reference LIE-4KD2PA.",
+      "start_ms": 24765,
+      "end_ms": 28965
+    }
+  ],
+  "events": [
+    {
+      "type": "user_speech_end",
+      "at_ms": 6490,
+      "turn": 1
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 6700,
+      "turn": 1
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 7180,
+      "turn": 1
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 7440,
+      "turn": 1
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 7530,
+      "turn": 1
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 11130,
+      "turn": 2
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 11370,
+      "turn": 2
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 11990,
+      "turn": 2
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 12290,
+      "turn": 2
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 12385,
+      "turn": 2
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 17005,
+      "turn": 3
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 17195,
+      "turn": 3
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 17625,
+      "turn": 3
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 17865,
+      "turn": 3
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 17945,
+      "turn": 3
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 23445,
+      "turn": 4
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 23675,
+      "turn": 4
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 24375,
+      "turn": 4
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 24655,
+      "turn": 4
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 24765,
+      "turn": 4
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "check_availability",
+      "arguments": {
+        "date": "tomorrow",
+        "service": "checkup"
+      },
+      "at_ms": 11990
+    },
+    {
+      "name": "book_appointment",
+      "arguments": {
+        "name": "Anna Berzina",
+        "phone": "26579824",
+        "service": "checkup",
+        "start": "2026-11-27T10:30:00+02:00"
+      },
+      "at_ms": 24375
+    }
+  ],
+  "metadata": {
+    "provider": "synthetic",
+    "note": "hand written demo fixture"
+  },
+  "reference_transcript": {
+    "0": "Hi, I would like to book a check-up.",
+    "3": "Anna Berzina."
+  }
+}

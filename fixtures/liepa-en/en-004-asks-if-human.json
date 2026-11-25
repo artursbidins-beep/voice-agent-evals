@@ -1,0 +1,140 @@
+{
+  "call_id": "demo-0004",
+  "scenario_id": "en-004-asks-if-human",
+  "language": "en",
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Liepa Dental Clinic, this is the automated assistant. How can I help?",
+      "start_ms": 0,
+      "end_ms": 4140
+    },
+    {
+      "role": "caller",
+      "text": "Before anything, are you a robot?",
+      "start_ms": 4540,
+      "end_ms": 6340
+    },
+    {
+      "role": "agent",
+      "text": "Fair question. I am an AI assistant for the clinic, and I can book you in or pass you to a person.",
+      "start_ms": 7420,
+      "end_ms": 12520
+    },
+    {
+      "role": "caller",
+      "text": "Right. Then book me a consultation.",
+      "start_ms": 12970,
+      "end_ms": 14870
+    },
+    {
+      "role": "agent",
+      "text": "Which day would you like?",
+      "start_ms": 15880,
+      "end_ms": 17280
+    },
+    {
+      "role": "caller",
+      "text": "Next week is fine.",
+      "start_ms": 17780,
+      "end_ms": 18980
+    },
+    {
+      "role": "agent",
+      "text": "Tuesday at nine or Wednesday at sixteen thirty are free for a consultation.",
+      "start_ms": 20250,
+      "end_ms": 23850
+    }
+  ],
+  "events": [
+    {
+      "type": "user_speech_end",
+      "at_ms": 6340,
+      "turn": 1
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 6540,
+      "turn": 1
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 7080,
+      "turn": 1
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 7330,
+      "turn": 1
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 7420,
+      "turn": 1
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 14870,
+      "turn": 2
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 15090,
+      "turn": 2
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 15560,
+      "turn": 2
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 15800,
+      "turn": 2
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 15880,
+      "turn": 2
+    },
+    {
+      "type": "user_speech_end",
+      "at_ms": 18980,
+      "turn": 3
+    },
+    {
+      "type": "asr_final",
+      "at_ms": 19220,
+      "turn": 3
+    },
+    {
+      "type": "llm_first_token",
+      "at_ms": 19860,
+      "turn": 3
+    },
+    {
+      "type": "tts_first_byte",
+      "at_ms": 20150,
+      "turn": 3
+    },
+    {
+      "type": "agent_audio_start",
+      "at_ms": 20250,
+      "turn": 3
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "check_availability",
+      "arguments": {
+        "date": "tuesday",
+        "service": "consult"
+      },
+      "at_ms": 19860
+    }
+  ],
+  "metadata": {
+    "provider": "synthetic",
+    "note": "hand written demo fixture"
+  }
+}

@@ -1,0 +1,23 @@
+id: en-006-email-confirmation
+title: Written confirmation is sent after the booking, with the reference
+language: en
+persona: Wants everything in writing, spells the address slowly.
+tags: [booking, confirmation]
+script:
+  - "Book me a children's appointment on Thursday, my son is six."
+  - "Nine in the morning."
+  - "Dace Liepina."
+  - "Send it to dace at example dot com."
+expect:
+  tool_calls:
+    - name: check_availability
+      arguments:
+        service: kids
+    - name: book_appointment
+      arguments:
+        service: kids
+    - name: email_the_confirmation
+      arguments:
+        email: dace@example.com
+  must_say_any:
+    - "confirmation"
